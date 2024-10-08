@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce</title>
+    <link rel="stylesheet" href="./index.css">
+    <link rel="stylesheet" href="./bootsrap.min.css">
+    <script src="./bootstarp.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+</head>
+
+<body style="background-color: rgb(248, 248, 177);">
+    <div class="container-fluid">
+        <h1 id="title">Smart <span class="heading-span">Shopping</span></h1>
+        <!-- navbar start -->
+        <nav class="navbar navbar-expand-lg bg-light" role="navigation">
+            <div class="container-fluid bg-info nav-container" id="navigation">
+                <a class="navbar-brand" href="#"><img class="logo-img" src="./images/logo1.png" alt=""></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="true"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon bg-none"><img class="hamburger" src="./images/hamburger-icon.png"
+                            alt="Hamburger"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link navcontent fs-5" href="#home" target="_self" id="home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <div class="dropdown">
+                                <button class="btn navcontent dropdown-toggle fs-5" type="button"
+                                    id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="true">
+                                    Product
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                    <li><a class="dropdown-item" href="./mobile.html" id="drop-con">Mobiles</a></li>
+                                    <li><a class="dropdown-item" href="./HomeAppliances.html" id="drop-con">Home
+                                            Appliances</a>
+                                    </li>
+                                    <li><a class="dropdown-item" href="./costume.html" id="drop-con">Costumes</a></li>
+                                    <li><a class="dropdown-item" href="./Toys.html" id="drop-con">Toys</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link  navcontent fs-5" href="#" id="services">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link  navcontent fs-5" href="./login.html" id="login">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link  navcontent fs-5" href="./cart.html" id="cart">cart</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- navbar end -->
+
+        <!-- move text start -->
+        <div class="movtxt">
+            <marquee behavior="" direction="left">
+                <ul class="d-flex" id="remarks">
+                    <li class="fs-5">Good Quality</li>
+                    <li class="fs-5">Lowest Price</li>
+                    <li class="fs-5">Quick Returns</li>
+                    <li class="fs-5">Cash on Delivery</li>
+                </ul>
+            </marquee>
+        </div>
+        <!-- move text end -->
+
+        <!-- carousel page start -->
+
+        <div id="carouselExampleControls" class="carousel slide mt-3" data-bs-ride="carousel" data-bs-interval="3000">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="./images/carouselImages/mobile.png" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="./images/carouselImages/home.png" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="./images/carouselImages/costume.png" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="./images/carouselImages/toy.png" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="./images/carouselImages/toy1.png" class="d-block w-100" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+
+        <!-- carousel page end -->
+
+        <!-- product page1 start -->
+        <div class="card-container">
+            <div class="card bg-light" id="card1">
+                <div class="card-content">
+                    <h1 class="fs-2">Mobiles</h1>
+                    <div class="image">
+                        <a href="./mobile.html"><img class="mob-img" src="./images/mobile.png" alt="Mobile"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="card bg-light" id="card2">
+                <div class="card-content">
+                    <h1 class="fs-2">Home Appliances</h1>
+                    <div class="image">
+                        <a href="./HomeAppliances.html"><img class="home-img" src="./images/home.png" alt="home"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="card bg-light" id="card3">
+                <div class="card-content">
+                    <h1 class="fs-2">Costumes</h1>
+                    <div class="image">
+                        <a href="./costume.html"><img class="dress-img" src="./images/T-Shirt.png" alt="T-shirt"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="card bg-light" id="card4">
+                <div class="card-content">
+                    <h1 class="fs-2">Toys</h1>
+                    <div class="image">
+                        <a href="./Toys.html"><img class="toy-img" src="./images/Toys.png" alt="Toys"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- product page1 end -->
+
+        
+    </div>
+    <!-- container-fluid end -->
+
+     <!-- footer page start-->
+     <div class="footer">
+        <h1 class="footertitle">Contact us</h1>
+        <div class="row">
+            <div class="col">
+                <div class="heading">
+                    <h3>Add queries</h3>
+                </div>
+                <div class="footer-form">
+                    <div class="d-flex justify-content-center contactform">
+                        <form action="https://api.web3forms.com/submit" method="POST" id="form">
+                          <input type="hidden" name="access_key" value="fafd679e-f275-45f0-b41d-bd2a698735c1">
+                          <input type="text" placeholder="Your name" id="contact-input" required>
+                          <input type="email" placeholder="Your email" id="contact-input" required>
+                          <textarea name="Message"  placeholder="Your Message" id="contact-input" required></textarea>
+                          <div class="submitbtn">
+                            <button type="submit" value="submit" id="formbtn">Submit</button>
+                          </div>
+                        </form>
+                      </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col" id="footersocial">
+                <div id="social-logo">
+                    <div>
+                        <h4>Feel free to reach out</h4>
+                    </div>
+                    <div class="social-media">
+                        <a href="https://wa.me/+919597153303"><img id="wtsapp" src="./images/wtsapp.png" alt="whatsapp"></a>
+                        <a href="https://www.instagram.com/_itz_me_a.n.g.u.r.a.j_?igsh=NGo4ZjFyM2NwejF6"><img id="instagram"
+                                src="./images/insta.png" alt="instagram"></a>
+                        <a href="mailto:angurajp51@gmail.com"><img src="./images/gmail.png" alt="gmail" id="gmail"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col">
+                <div class="copyright">
+                    <p>&copy; 2024, Smart Shopping | All Rights Reserved.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+     <!-- footer page end-->
+</body>
+</html>

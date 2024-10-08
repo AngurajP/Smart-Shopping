@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="./login.css">
+    <link rel="stylesheet" href="./bootsrap.min.css">
+    <script src="./bootstarp.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body id="body">
+    <!-- login page form -->
+    <div class="container">
+        <div class="card" id="card">
+            <h3>Smart shopping - Login page</h3>
+            <form id="loginForm">
+                <div class="inputdiv ms-5 mt-4">
+                    <input type="text" placeholder ="Email" autocomplete="off" id="emailBox">
+                    <p id="emailError"></p>
+                    <input type="password" placeholder="Password" pattern="[a-zA-z0-9!@#$%^&*()]" id="passBox">
+                    <p id="passError"></p>
+                </div>
+                <div class="btndiv">
+                    <button type="submit" id="loginBtn">Login</button>
+                </div>
+            </form>
+            <div class="ordiv">
+                <p>or</p>
+            </div>
+            <div class="newAccdiv">
+                <a href="./createNewAcc.html" id="newAcc">create new account</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // select textboxs
+        const Email = document.getElementById('emailBox');
+        const Password = document.getElementById('passBox');
+        const emailError = document.getElementById('emailError');
+        const passError = document.getElementById('passError');
+        const form = document.getElementById('loginForm');
+        // focus on form submiting
+        form.addEventListener('submit',l)
+        function l(event) {
+            event.preventDefault()
+            if (Email.value === '' || Password.value === '') {
+                emailError.style.color = "red";
+                passError.style.color = "red";
+                emailError.innerText = "Enter your email";
+                passError.innerText = "Enter your Password";
+                    Swal.fire({
+                        icon: "error",
+                        title: "Oops...",
+                        text: "Please fill all fields.."
+                        });
+            } else {
+                    Email.value = '';
+                    Password.value = '';
+                    emailError.innerText = "";
+                    passError.innerText = "";
+                    location.href = './index.html';
+            }
+        }
+    </script>
+</body>
+
+</html>
+<script>
+    
+</script>

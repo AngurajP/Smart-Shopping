@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purchase</title>
+    <link rel="stylesheet" href="./Purchase.css">
+    <link rel="stylesheet" href="./bootsrap.min.css">
+    <script src="./bootstarp.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body id="body">
+    <div class="card mx-5">
+        <h2>Payment</h2>
+        <form>
+            <!-- Customer Information Section -->
+            <h4>Customer Information</h4>
+
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Please enter a valid email address">
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" pattern="\d{10}" maxlength="10" title="Please enter a 10-digit phone number">
+            </div>
+
+            <!-- Shipping Address Section -->
+            <h4>Shipping Address</h4>
+
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <textarea id="address" name="address"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city">
+            </div>
+
+            <div class="form-group">
+                <label for="state">State:</label>
+                <input type="text" id="state" name="state">
+            </div>
+
+            <div class="form-group">
+                <label for="zipcode">Postal Code:</label>
+                <input type="number" id="zipcode" name="zipcode" min="100000" max="999999" required>
+            </div>
+
+            <!-- Payment Information Section -->
+            <h4>Payment Information</h4>
+            <div class="paymentBtn">
+                <button type="submit" id="paycardBtn" onclick="purchasePage()">Pay with Card</button>
+                <button type="submit" id="payupiBtn" onclick="upiPayment()">Pay with UPI</button>
+            </div>
+            <!-- card payment -->
+            <div class="cardpayment" id="cardpayment">
+                <div class="price">
+                    <label for="ProductPrice" id="priceLabel">Product Price:</label>
+                    <p id="productprice"></p>
+                </div>
+                <div class="form-group">
+                    <label for="card-name">card holder Name:</label>
+                    <input type="text" id="card-name" name="card_name">
+                </div>
+
+                <div class="form-group">
+                    <label for="card-number">Card Number:</label>
+                    <input type="number" id="card-number" name="card_number" pattern="d{12}" maxlength="12">
+                </div>
+
+                <div class="form-group">
+                    <label for="exp-month">Expiration Month:</label>
+                    <input type="number" id="exp-month" name="exp_month" placeholder="MM" pattern="[0-9]\d{2}" minlength='2' maxlength="2">
+                </div>
+
+                <div class="form-group">
+                    <label for="exp-year">Expiration Year:</label>
+                    <input type="number" id="exp-year" name="exp_year" placeholder="YYYY" pattern="\d{4}" maxlength="4">
+                </div>
+
+                <div class="form-group">
+                    <label for="cvv">CVV:</label>
+                    <input type="number" id="cvv" name="cvv" pattern="\d{3}" maxlength="3">
+                </div>
+                <!-- Submit Button -->
+                <div class="submitbtns">
+                    <div class="submitbtn">
+                        <button type="submit" id="submitupiBtn">Submit</button>
+                    </div>
+                    <div class="backbtn">
+                        <button id="backBtn" onclick="back()">Back</button>
+                    </div>
+                 </div>
+            </div>
+            <!-- Upi payment -->
+            <div class="upipayment" id="upipayment">
+                <div class="upiprice">
+                    <label for="ProductPrice" id="upipriceLabel">Product Price:</label>
+                    <p id="upiproductprice"></p>
+                </div>
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="upiname" name="name">
+                </div>
+    
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="upiphone" name="phone" pattern="\d{10}" title="Please enter a 10-digit phone number">
+                </div>
+                <div class="form-group">
+                    <label for="country">UPI Method:</label>
+                    <select id="payapp" name="country">
+                        <option value="">Select Payment Gateway</option>
+                        <option value="gpay">Google Pay</option>
+                        <option value="phnpay">Phonepe</option>
+                        <option value="paytm">Paytm</option>
+                        <option value="razor">Razorpay</option>
+                        <option value="payu">PayU</option>
+                    </select>
+                </div>  
+                <!-- Submit Button -->
+                 <div class="submitbtns">
+                    <div class="submitbtn">
+                        <button type="submit" id="submitupiBtn">Submit</button>
+                    </div>
+                    <div class="backbtn">
+                        <button id="backBtn" onclick="back()">Back</button>
+                    </div>
+                 </div>
+            </div>
+
+        </form>
+    </div>
+
+    <script>
+        const paycardBtn = document.getElementById('paycardBtn');
+        const payupiBtn = document.getElementById('payupiBtn');
+        const cardpayment = document.getElementById('cardpayment');
+        const upipayment = document.getElementById('upipayment');
+        const submitcardBtn = document.getElementById('submitBtn');
+        const submitupiBtn = document.getElementById('submitupiBtn');
+        const backbtn = document.getElementById('backbtn');
+
+        // input filed selection for card form validation
+        const name = document.getElementById('name');
+        const email = document.getElementById('email');
+        const phone = document.getElementById('phone');
+        const address = document.getElementById('address');
+        const city = document.getElementById('city');
+        const state = document.getElementById('state');
+        const zipcode = document.getElementById('zipcode');
+        const country = document.getElementById('country');
+        const cardName = document.getElementById('card-name');
+        const cardNumber = document.getElementById('card-number');
+        const expMonth = document.getElementById('exp-month');
+        const expYear = document.getElementById('exp-year');
+        // input filed selection for upi form validation
+        const upiname = document.getElementById('upiname');
+        const upiemail = document.getElementById('upiemail');
+        const upiphone = document.getElementById('upiphone');
+        const payapp = document.getElementById('payapp');
+        const cvv = document.getElementById('cvv');
+        const amount = document.getElementById('amount');
+        const upi = document.getElementById('upi');
+
+        // purchasecard price 
+        const productprice = document.getElementById('productprice');
+        const upiproductprice = document.getElementById('upiproductprice');
+
+        
+        paycardBtn.addEventListener('click',(event)=>{
+            event.preventDefault();
+            paycardBtn.style.boxShadow = '0px 0px 10px 5px yellowgreen';
+            payupiBtn.style.boxShadow = 'none';
+            cardpayment.style.display = 'block';
+            upipayment.style.display = 'none';
+        })
+        payupiBtn.addEventListener('click',(event)=>{
+            event.preventDefault();
+            payupiBtn.style.boxShadow = '0px 0px 10px 5px yellowgreen';
+            paycardBtn.style.boxShadow = 'none';
+            cardpayment.style.display = 'none';
+            upipayment.style.display = 'block';
+        })
+        submitcardBtn.addEventListener('click',(event)=>{
+            event.preventDefault();
+            if (name.value === '' || email.value === '' || phone.value === '' || address.value==='' || city.value === '' || state.value === '' || zipcode.value === ''|| country.value === '' || cardName.value === '' || cardNumber.value === '' || expMonth.value === ''|| expYear.value === '' || cvv.value === '') {
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...😢",
+                    text: "Please enter all required fields!",
+                    });
+            } else {
+                Swal.fire({
+                    title: "Payment success",
+                    text: `Hi! ${name.value}😎 your payment will be success👍`,
+                    icon: "success"
+                    }).then(()=>{
+                       name.value = '';
+                       email.value = '';
+                        phone.value = '';
+                        address.value='';
+                        city.value = '';
+                        state.value = '';
+                        zipcode.value = '';
+                        country.value = '';
+                        cardName.value = '';
+                        cardNumber.value = '';
+                        expMonth.value = '';
+                        expYear.value = '';
+                        cvv.value = '';
+                    })  
+            }
+            
+        })
+        submitupiBtn.addEventListener('click',(event)=>{
+            event.preventDefault();
+            if (name.value === '' || email.value === '' || phone.value === '' || address.value==='' || city.value === '' || state.value === '' || zipcode.value === '' || upiname.value===''|| upiemail.value===''|| upiphone.value === ''|| payapp.value ==='' || upi.value === '' || amount.value === '') {
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...😢",
+                    text: "Please enter all required fields!",
+                    });
+            } else {
+                Swal.fire({
+                    title: "Payment success",
+                    text: `Hi! ${name.value}😎 your payment will be success👍`,
+                    icon: "success"
+                    }).then(()=>{
+                        name.value = '';
+                        email.value = '';
+                        phone.value ='';
+                        address.value='';
+                        city.value ='';
+                        state.value = '';
+                        zipcode.value = '';
+                        upiname.value='';
+                        upiemail.value='';
+                        upiphone.value = '';
+                        payapp.value ='';
+                        upi.value = '';
+                        amount.value = ''; 
+
+                    }) 
+            }
+        })
+    // proudct amount stored in prouctprice field
+        function purchasePage(){
+            const purchaseItems = localStorage.getItem('productAmount');
+            let rateofproduct = purchaseItems;
+            productprice.innerText = '₹'+rateofproduct;
+        }
+        // purchase UPI
+        function upiPayment(){
+            const purchaseItems = localStorage.getItem('productAmount');
+            let rateofproduct = purchaseItems;
+            upiproductprice.innerText = '₹'+rateofproduct;
+        }
+
+        // back to product page
+        function back(){
+            window.history.back();
+        }
+        
+    </script>
+</body>
+
+</html>

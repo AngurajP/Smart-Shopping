@@ -1,0 +1,77 @@
+#body{
+    background-color: #fff;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card{
+    margin-top: 50px;
+    width: 500px;
+    padding: 20px;
+}
+#card{
+    background-color: #c0d6cf;
+    box-shadow: 0px 0px 10px 3px black;
+}
+input{
+    width: 80%;
+    display: block;
+}
+#emailBox,#passBox{
+    padding: 8px;
+    border: 0;
+    outline: 0;
+    font-size: 23px;
+    background: none;
+    border-bottom: 2px solid black;
+    transition: all 1s linear;
+}
+#emailBox:focus::placeholder{
+    transform: translateY(-10px);
+}
+
+#passBox:focus::placeholder{
+    transform: translateY(-10px);
+}
+h3{
+    text-align: center;
+    color:#000;
+}
+.btndiv{
+    display: flex;
+    justify-content: center;
+}
+#loginBtn{
+    width: 150px;
+    border: 0;
+    outline: 0;
+    padding: 5px;
+    font-size: 20px;
+    background-color: #1f14e4;
+    border-radius: 5px;
+    color: #fff;
+}
+#loginBtn:hover{
+    background-color: #15a710;
+    color: black;
+}
+.ordiv{
+    display: flex;
+    justify-content: center;
+}
+.ordiv p{
+    margin-top: 15px;
+    font-size: 22px;
+    color: red;
+}
+.newAccdiv{
+    display: flex;
+    justify-content: center;
+}
+#newAcc{
+    font-size: 23px;
+    text-decoration: none;
+    color: rgb(52, 21, 231);
+}

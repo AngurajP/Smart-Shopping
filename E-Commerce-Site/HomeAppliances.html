@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Appliances</title>
+    <link rel="stylesheet" href="./homeAppliances.css">
+    <link rel="stylesheet" href="./bootsrap.min.css">
+    <script src="./bootstarp.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body style="background-color: khaki;">
+    <div class="container-fluid">
+        <h1 id="title"><span class="heading">Home Appliances</span></h1>
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container-fluid" id="navigation">
+                <a class="navbar-brand" href="#"><img class="logo-img" src="./images/logo1.png"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="true"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"><img class="hamburger" src="./images/hamburger-icon.png" alt="Hamburger"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link text-light fs-5" href="./index.html" target="_self">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <div class="dropdown">
+                                <button class="btn text-white dropdown-toggle fs-5" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="true">
+                                  Product
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                  <li><a class="dropdown-item" href="./mobile.html">Mobiles</a></li>
+                                  <li><a class="dropdown-item" href="./HomeAppliances.html">Home Appliances</a></li>
+                                  <li><a class="dropdown-item" href="./costume.html">Costumes</a></li>
+                                  <li><a class="dropdown-item" href="./Toys.html">Toys</a></li>
+                                </ul>
+                              </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light fs-5" href="./login.html">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light fs-5" href="./cart.html">cart</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="movtxt">
+            <marquee behavior="" direction="left">
+                <ul class="d-flex" id="remarks">
+                 <li class="fs-5">Good Quality</li>
+                 <li class="fs-5">Lowest Price</li>
+                 <li class="fs-5">Quick Returns</li>
+                 <li class="fs-5">Cash on Delivery</li>
+             </ul>
+            </marquee>
+        </div>
+
+        <!-- carousel page start -->
+
+        <div id="carouselExampleControls" class="carousel slide mt-3" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="./images/carouselImages/home.png" class="d-block w-100" alt="...">
+              </div>
+            </div>
+        </div>
+
+        <!-- carousel page end -->
+
+        <div class="card-container">
+            <div class="card" id="card1">
+                <div class="card-content">
+                    <div class="image">
+                        <a href="#"><img class="home-img" src="./images/home.png" alt="home"></a>
+                        <h5>Whirlpool 235 L Frost-free Double-door Refrigerator</h5>
+                        <p class="bg-success ratings"><span class="text-light">Ratings: 4 ⭐⭐⭐⭐</span><br><span
+                                class="text-light">cash on delivery</span></p>
+                        <h4 class="text-light mb-4">₹22,490 <span
+                                class="text-danger text-decoration-line-through">₹30,450</span><span
+                                class="text-warning"> 26% off </span></h4>
+                                <p class="text-light fs-5 bg-dark">Free Delivery</p>
+                    </div>
+                    <div class="buttons">
+                        <div class="purchase-btn d-flex">
+                            <button onclick="purchase('22,490')" class="btn btn-outline-danger w-50 p-2 mb-4 ms-1">Purchase</button>
+                            <button class="btn btn-outline-dark w-50 p-2 mb-4 ms-2"
+                                onclick='addtocart("Whirlpool 235 L Frost-free Double-door Refrigerator","./images/home.png","₹22,490")'>Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>.
+            <div class="card" id="card2">
+                <div class="card-content">
+                    <div class="image">
+                        <a href="#"><img class="home-img" src="./Home/image2.png" alt="home"></a>
+                        <h5>Silver Home DIAMOND01 450 Mixer Grinder (3 Jars, Yellow)</h5>
+                        <p class="bg-success ratings"><span class="text-light">Ratings: 4 ⭐⭐⭐⭐</span><br><span
+                                class="text-light">cash on delivery</span></p>
+                        <h4 class="text-light mb-4">₹1,099 <span
+                                class="text-danger text-decoration-line-through">₹1,950</span><span
+                                class="text-warning"> 43% off </span></h4>
+                                <p class="text-light fs-5 bg-dark">Free Delivery</p>
+                    </div>
+                    <div class="buttons">
+                        <div class="purchase-btn d-flex">
+                            <button onclick="purchase('1,099')" class="btn btn-outline-danger w-50 p-2 mb-4 ms-1">Purchase</button>
+                            <button class="btn btn-outline-dark w-50 p-2 mb-4 ms-2"
+                                onclick='addtocart("Silver Home DIAMOND01 450 Mixer Grinder (3 Jars, Yellow)","./Home/image2.png","₹1,099")'>Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>.
+            <div class="card" id="card3">
+                <div class="card-content">
+                    <div class="image">
+                        <a href="#"><img class="home-img" src="./Home/image3.png" alt="home"></a>
+                        <h5>LG 80 cm (32 inch) HD Ready LED Smart WebOS TV</h5>
+                        <p class="bg-success ratings"><span class="text-light">Ratings: 4 ⭐⭐⭐⭐</span><br><span
+                                class="text-light">cash on delivery</span></p>
+                        <h4 class="text-dark mb-4">₹14,490 <span
+                                class="text-danger text-decoration-line-through">₹22,490</span><span
+                                class="text-primary"> 42% off </span></h4>
+                                <p class="text-light fs-5 bg-dark">Free Delivery</p>
+                    </div>
+                    <div class="buttons">
+                        <div class="purchase-btn d-flex">
+                            <button onclick="purchase('14,490')" class="btn btn-outline-danger w-50 p-2 mb-4 ms-1">Purchase</button>
+                            <button class="btn btn-outline-dark w-50 p-2 mb-4 ms-2"
+                                onclick='addtocart("LG 80 cm (32 inch) HD Ready LED Smart WebOS TV","./Home/image3.png","₹14,490")'>Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>.
+            <div class="card" id="card4">
+                <div class="card-content">
+                    <div class="image">
+                        <a href="#"><img class="home-img" src="./Home/image4.png" alt="home"></a>
+                        <h5>V-Guard Ultra High Speed 3 Blade Table Fan(Blue White)</h5>
+                        <p class="bg-success ratings"><span class="text-light">Ratings: 4 ⭐⭐⭐⭐</span><br><span
+                                class="text-light">cash on delivery</span></p>
+                        <h4 class="text-light mb-4">₹2,099 <span
+                                class="text-danger text-decoration-line-through">₹3,500</span><span
+                                class="text-warning"> 40% off </span></h4>
+                                <p class="text-light fs-5 bg-dark">Free Delivery</p>
+                    </div>
+                    <div class="buttons">
+                        <div class="purchase-btn d-flex">
+                            <button onclick="purchase('2,099')" class="btn btn-outline-danger w-50 p-2 mb-4 ms-1">Purchase</button>
+                            <button class="btn btn-outline-dark w-50 p-2 mb-4 ms-2"
+                                onclick='addtocart("V-Guard Ultra High Speed 3 Blade Table Fan(Blue White)","./Home/image4.png","₹2,099")'>Add to cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./add_cart.js"></script>
+</body>
+</html>

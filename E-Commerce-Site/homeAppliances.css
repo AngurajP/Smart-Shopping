@@ -1,0 +1,97 @@
+*{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    transition: all 0.3s linear;
+
+}
+.logo-img {
+    width: 100px;
+    height: 50px;
+    object-fit: cover;
+}
+#navigation{
+    background-color: rgb(202, 73, 222);
+}
+#title {
+    text-align: center;
+    font-family: "Creepster", system-ui;
+  font-style: normal;
+  color: rgb(49, 107, 158);
+  
+}
+.heading {
+    font-family: "Creepster", system-ui;
+  font-style: normal;
+    color: rgb(202, 37, 186);
+}
+.hamburger {
+    width: 50px;
+    height: 50px;
+    position: relative;
+    left: -10px;
+    top: -10px;
+}
+.movtxt {
+    background-color: rgb(12, 131, 131);
+    height: 35px;
+    color: aliceblue;
+}
+#remarks {
+    gap: 40px;
+}
+/* carousel */
+.carousel-item img{
+    height: 450px;
+}
+.card:hover{
+    box-shadow: 0px 0px 10px 5px #b53f3f;
+}
+#card1 {
+    width: 300px;
+    height: 100%;
+    border-radius: 20px;
+    background-color: rgba(106, 137, 196, 0.726);
+}
+#card2 {
+    width: 300px;
+    height: 100%;
+    border-radius: 20px;
+    background-color: rgba(97, 91, 95, 0.747);
+}
+#card3 {
+    width: 300px;
+    height: 100%;
+    border-radius: 20px;
+    background-color:rgba(203, 214, 101, 0.897);
+}
+#card4 {
+    width: 300px;
+    height: 100%;
+    border-radius: 20px;
+    background-color:rgb(27, 180, 91);
+}
+.card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    gap: 15px;
+}
+.card-content {
+    text-align: center;
+}
+.home-img {
+    width: 200px;
+    height: 200px;
+    transition:all 0.5s linear;
+    object-fit: contain;
+    transform: scale(0.9);
+}
+.home-img:hover {
+    transform: scale(1);
+}
+.ratings{
+    font-size: 17px;
+}
